@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Repo } from "types/";
 import { FlexContainer, ImageContainer } from "./Containers";
 
 interface IRepoCarouselProps {

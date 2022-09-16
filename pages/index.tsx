@@ -108,8 +108,39 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>dg_dev</title>
-        <meta name='description' content='' />
+        <title>Kid Cajun | Home</title>
+
+        <meta
+          name='description'
+          content='Kid Cajun is an accordion focussed, up tempo, toe tapping band based in Toronto, Canada. Our music is for folks who love Cajun, zydeco, country or the blues. Stretching the boundaries a bit, well, more than just a bit, this band only selects the best in songs to sing and play, with a strong collection of original tunes included in every set.'
+        />
+        <meta name='keywords' content='cajun, toronto, music, liveband' />
+        <meta name='author' content='Dakotah Godfrey' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+        <meta property='og:url' content='https://kidcajun.com/' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Kid Cajun Toronto' />
+        <meta
+          property='og:description'
+          content='Our music is for folks who love Cajun, zydeco, country or the blues. Stretching the boundaries a bit, well, more than just a bit, this band only selects the best in songs to sing and play, with a strong collection of original tunes included in every set.'
+        />
+        <meta
+          property='og:image'
+          content='https://kidcajun.com/images/band-006.jpg'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta property='twitter:domain' content='kidcajun.com' />
+        <meta property='twitter:url' content='https://kidcajun.com/' />
+        <meta name='twitter:title' content=' Kid Cajun Music Toronto' />
+        <meta
+          name='twitter:description'
+          content='Our music is for folks who love Cajun, zydeco, country or the blues. Stretching the boundaries a bit, well, more than just a bit, this band only selects the best in songs to sing and play, with a strong collection of original tunes included in every set.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://kidcajun.com/images/band-006.jpg'
+        />
       </Head>
       <MainWrapper>
         <section className={`${isMobile ? "rmPadding" : ""}`}>

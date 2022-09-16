@@ -70,8 +70,43 @@ const Gallery: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>dg_dev | Gallery</title>
-        <meta name='description' content='' />
+        <Head>
+          <title>Kid Cajun | Gallery</title>
+          <meta
+            name='description'
+            content='Our music is for folks who love Cajun, zydeco, country or the blues. Check out the band in action with our gallery.'
+          />
+          <meta name='keywords' content='cajun, toronto, music, liveband' />
+          <meta name='author' content='Dakotah Godfrey' />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+          <meta property='og:url' content='https://kidcajun.com/gallery/' />
+          <meta property='og:type' content='website' />
+          <meta property='og:title' content='Kid Cajun Toronto' />
+          <meta
+            property='og:description'
+            content='Our music is for folks who love Cajun, zydeco, country or the blues. Check out the band in action with our gallery.'
+          />
+          <meta
+            property='og:image'
+            content='https://kidcajun.com/images/band-01.jpg'
+          />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta property='twitter:domain' content='kidcajun.com' />
+          <meta
+            property='twitter:url'
+            content='https://kidcajun.com/gallery/'
+          />
+          <meta name='twitter:title' content=' Kid Cajun Music Toronto' />
+          <meta
+            name='twitter:description'
+            content='Our music is for folks who love Cajun, zydeco, country or the blues. Check out the band in action with our gallery..'
+          />
+          <meta
+            name='twitter:image'
+            content='https://kidcajun.com/images/band-01.jpg'
+          />
+        </Head>
       </Head>
       <MainWrapper>
         <IntroWrapper>
