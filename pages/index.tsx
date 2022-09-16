@@ -19,6 +19,7 @@ const IframeWrapper = styled.div`
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
+  margin-bottom: 3.2rem;
   iframe {
     overflow: hidden;
     border: 0;
@@ -112,6 +113,34 @@ const Home: NextPage = () => {
       </Head>
       <MainWrapper>
         <section className={`${isMobile ? "rmPadding" : ""}`}>
+          <h2>Beauty Was Everywhere</h2>
+          <p style={{ marginBottom: "2.4rem" }}>
+            For Ron Sellwood, leader of Toronto’s Kid Cajun, the last few years
+            have not been easy ones. The plucky Sellwood fought cancer long and
+            hard, and eventually emerged on top. Now in perfect health, he was
+            given as opportunity to step back and take a hard look at the wider
+            world. notice the wider world. First came the ravages of COVID (from
+            which he luckily escaped) then the tragedy of Ukraine. The heartfelt
+            new single, Beauty Was Everywhere, written by Sellwood and performed
+            by Kid Cajun, documents the once pleasant life enjoyed by the people
+            of Ukraine, now interrupted by a hideous war. “Its a love song
+            dedicated to the people and especially the children of Ukraine” says
+            Ron. Are the horrors of war interrupting a wonderful life, analogous
+            to the horrors of cancer? Perhaps so. In any case, one cannot help
+            but be moved by the love, hope and sincerity in this powerful new
+            song.
+          </p>
+          <IframeWrapper>
+            <iframe
+              src='https://www.youtube.com/embed/YK13ODLIOYM'
+              title='YouTube video player'
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              referrerPolicy={"strict-origin"}
+              loading='lazy'
+            ></iframe>
+          </IframeWrapper>
           <GridContainer id='intro' columns={isTablet ? 1 : 2}>
             <IntroWrapper>
               <Intro heading={greeting} />
@@ -155,50 +184,6 @@ const Home: NextPage = () => {
               song writing skills but in expanding the band’s audience as well.
               The adventure begins.
             </p>
-            <p style={{ marginBottom: "2.4rem" }}>
-              For Ron Sellwood, leader of Toronto’s Kid Cajun, the last few
-              years have not been easy ones. The plucky Sellwood fought cancer
-              long and hard, and eventually emerged on top. Now in perfect
-              health, he was given as opportunity to step back and take a hard
-              look at the wider world. notice the wider world. First came the
-              ravages of COVID (from which he luckily escaped) then the tragedy
-              of Ukraine. The heartfelt new single, Beauty Was Everywhere,
-              written by Sellwood and performed by Kid Cajun, documents the once
-              pleasant life enjoyed by the people of Ukraine, now interrupted by
-              a hideous war. “Its a love song dedicated to the people and
-              especially the children of Ukraine” says Ron. Are the horrors of
-              war interrupting a wonderful life, analogous to the horrors of
-              cancer? Perhaps so. In any case, one cannot help but be moved by
-              the love, hope and sincerity in this powerful new song.
-            </p>
-            {/* <h3>Tracklist</h3>
-              <ul className='tracklist'>
-                <li>1. Beauty Was Everywhere</li>
-                <li>2. Fascintainment</li>
-                <li>3. Not Quite Ready To Move On Yet</li>
-                <li>4. Jake and Me and the Other Three</li>
-                <li>5. Turn That Circle Upside Down</li>
-                <li>6. All Hail the Hammer and the Nail</li>
-                <li>7. Do It the Way Your Mother Told You</li>
-                <li>8. Handle With Care</li>
-                <li>9. Worn Out Stairs</li>
-                <li>10. Faceplant</li>
-                <li>11. Monster Mask</li>
-                <li>12. Swing Renaldo</li>
-                <li>13. Boardwalk to the Stars</li>
-              </ul> */}
-            <h2>Beauty Was Everywhere</h2>
-            <IframeWrapper>
-              <iframe
-                src='https://www.youtube.com/embed/YK13ODLIOYM'
-                title='YouTube video player'
-                frameBorder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-                referrerPolicy={"strict-origin"}
-                loading='lazy'
-              ></iframe>
-            </IframeWrapper>
           </section>
           <section className='music' style={{ width: "100%" }}>
             <h2 style={{ display: "flex", alignItems: "center" }}>
@@ -206,7 +191,6 @@ const Home: NextPage = () => {
               <BsSpotify style={{ marginRight: "1.6rem", color: "#1DB954" }} />
               Listen now on Spotify
             </h2>
-
             <iframe
               style={{ borderRadius: "12px" }}
               src='https://open.spotify.com/embed/artist/4qEw5OVpqnrrih9WZtUdwg?utm_source=generator&theme=0'
@@ -220,7 +204,6 @@ const Home: NextPage = () => {
             ></iframe>
           </section>
           <section>
-            {" "}
             <GridContainer
               columns={isTablet ? 1 : 2}
               className='band'
@@ -232,7 +215,6 @@ const Home: NextPage = () => {
                   margin: "2.4rem 0",
                 }}
               >
-                {" "}
                 Kid Cajun is...
               </h2>
               <BandMember
