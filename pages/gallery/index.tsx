@@ -80,7 +80,7 @@ const Gallery: NextPage = () => {
           <meta name='author' content='Dakotah Godfrey' />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
 
-          <meta property='og:url' content='https://kidcajun.com/gallery/' />
+          <meta property='og:url' content='https://kidcajun.com/gallery' />
           <meta property='og:type' content='website' />
           <meta property='og:title' content='Kid Cajun Toronto' />
           <meta
@@ -93,10 +93,7 @@ const Gallery: NextPage = () => {
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta property='twitter:domain' content='kidcajun.com' />
-          <meta
-            property='twitter:url'
-            content='https://kidcajun.com/gallery/'
-          />
+          <meta property='twitter:url' content='https://kidcajun.com/gallery' />
           <meta name='twitter:title' content=' Kid Cajun Music Toronto' />
           <meta
             name='twitter:description'
