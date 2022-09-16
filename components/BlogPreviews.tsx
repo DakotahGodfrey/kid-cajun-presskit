@@ -1,19 +1,18 @@
 import Image from "next/image";
 import React from "react";
-import { Article } from "types/";
 import { GridContainer, ImageContainer } from "./Containers";
 
 interface IBlogPreviews {
-  articles: Article[];
+  images: string[];
 }
-export const BlogPreviews: React.FC<IBlogPreviews> = ({ articles }) => {
+export const BlogPreviews: React.FC<IBlogPreviews> = ({ images }) => {
   return (
     <section>
-      <h2>Recent Articles</h2>
+      <h2>Gallery</h2>
       <GridContainer columns={2}>
-        {articles ? (
-          articles.map(({ title, slug, description, category, image }) => (
-            <div key={slug} className='card card-article'>
+        {images ? (
+          images.map((imagePath: string) => (
+            <div key={imagePath} className='card card-article'>
               <ImageContainer
                 mBottom='1.6rem'
                 pBottom='0.8rem'
@@ -21,22 +20,14 @@ export const BlogPreviews: React.FC<IBlogPreviews> = ({ articles }) => {
                 rounded
               >
                 <Image
-                  src={image.url}
-                  alt={title}
+                  src={`/images/${imagePath}`}
+                  alt=''
                   layout='fill'
                   objectFit='cover'
                   objectPosition='center center'
                   quality={75}
                 />
               </ImageContainer>
-              <h3>
-                <a href={""}>{title}</a>
-              </h3>
-              <p>{description}</p>
-              <div className='lang-tag'>
-                <span style={{ backgroundColor: `${category.color}` }}></span>{" "}
-                {category.title}
-              </div>
             </div>
           ))
         ) : (

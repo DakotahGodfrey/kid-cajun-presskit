@@ -9,9 +9,11 @@ import { useState } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
   const [currentTheme, setCurrentTheme] = useState<
     typeof defaultTheme | typeof darkTheme
-  >(defaultTheme);
-  const handleThemeSwitch = (theme: typeof currentTheme) =>
-    setCurrentTheme(theme === darkTheme ? defaultTheme : darkTheme);
+  >(darkTheme);
+  const handleThemeSwitch = (theme: typeof currentTheme) => {
+    setCurrentTheme(theme === defaultTheme ? darkTheme : defaultTheme);
+    console.log("flipped", currentTheme);
+  };
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyles />

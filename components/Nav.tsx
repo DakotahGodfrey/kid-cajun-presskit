@@ -1,16 +1,16 @@
 import { defaultTheme, darkTheme, getFromTheme } from "@styles/theme";
 import Link from "next/link";
+import { BannerWrapper } from "pages";
 import React from "react";
 import styled from "styled-components";
-import Logo from "./Logo";
+import { BsLightbulbFill, BsMoonStarsFill } from "react-icons/bs";
 
 const NavWrapper = styled.header`
-  max-width: 100rem;
+  max-width: 120rem;
   margin-inline: auto;
   background-color: ${getFromTheme("secondary")};
   padding: 2.2rem 1.2rem 1.2rem;
   > div {
-    background-color: ${getFromTheme("BG")};
     margin-inline: auto;
     display: flex;
     align-items: center;
@@ -22,13 +22,16 @@ const NavWrapper = styled.header`
   }
   ul {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-evenly;
   }
-  li,
-  button {
-    &:not(:last-child) {
-      margin-right: 0.8rem;
+  li.logo-nav {
+    margin-right: 0.8rem;
+  }
+
+  li {
+    &:last-child {
+      margin-left: 0.8rem;
     }
   }
   a,
@@ -36,33 +39,13 @@ const NavWrapper = styled.header`
     padding: 1rem 0.4rem;
     color: ${getFromTheme("primary")};
     border-radius: 0.5rem;
+    font-size: 2.8rem;
     &:hover {
       background-color: ${getFromTheme("secondary")};
+      color: ${getFromTheme("accent")};
     }
   }
-  a:hover {
-    color: ${getFromTheme("link")};
-  }
-  button:hover {
-    color: ${getFromTheme("accent")};
-  }
 `;
-
-const Settings: React.FC = () => {
-  return (
-    <ul>
-      {/* 
-      Possible Additional Settings
-      - Font Size Slider
-      - High Contrast
-      - Font Weight Steps
-      - Dyslexia Font Option
-      - Color Blindness Themes
-      - Zoom level?
-      */}
-    </ul>
-  );
-};
 
 interface INavbarProps {
   currentTheme: typeof defaultTheme | typeof darkTheme;
@@ -73,34 +56,40 @@ export const Navbar: React.FC<INavbarProps> = ({
   handleThemeSwitch,
 }) => {
   return (
-    <NavWrapper>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Logo />
-            </li>
-            <li>
-              <Link href={"/projects"}>Projects</Link>
-            </li>
-            <li>
-              <Link href={"/contact"}>Contact</Link>
-            </li>
-            <li>
-              <Link href={"/blog"}>Blog</Link>
-            </li>
-            <li>
-              <Link href={"/about"}>About</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className='nav-menu'>
-          <button onClick={() => handleThemeSwitch(currentTheme)}>
-            Switch Theme
-          </button>
-          <button>Settings</button>
+    <>
+      <NavWrapper>
+        <div>
+          <nav>
+            <ul>
+              <li className='logo-nav'>
+                <Link href='/'>Kid Cajun</Link>
+              </li>
+              <li className='border'>|</li>
+              <li>
+                <Link href={"/gallery"}>Gallery</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className='menu'>
+            <button onClick={() => handleThemeSwitch(currentTheme)}>
+              {currentTheme === defaultTheme ? (
+                <BsMoonStarsFill />
+              ) : (
+                <BsLightbulbFill />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </NavWrapper>
+      </NavWrapper>
+      <BannerWrapper>
+        <p>
+          Catch Ron live @{" "}
+          <a href='https://goo.gl/maps/otU32Q6HM8eXG7VN6'>
+            The Dominion Tavern, 500 Queen St. E.
+          </a>{" "}
+        </p>
+        <i>Thursday, Sept 22, 7 until 9 pm</i>
+      </BannerWrapper>
+    </>
   );
 };

@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
     display: -webkit-box;
     -webkit-line-clamp:  1;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: scroll;
     line-clamp: 1;
     &-2{
       display: -webkit-box;
@@ -36,9 +36,17 @@ const GlobalStyles = createGlobalStyle`
       display: -webkit-box;
     -webkit-line-clamp:  1;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: scroll;
       -webkit-line-clamp:3;
       line-clamp:3;
+    }
+    &-7{
+      display: -webkit-box;
+    -webkit-line-clamp:  1;
+    -webkit-box-orient: vertical;
+    overflow: scroll;
+      -webkit-line-clamp:7;
+      line-clamp:7;
     }
   }
   h1{
@@ -74,6 +82,11 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     border-radius: 5px;
     align-content: flex-start;
+    &-gallery{
+      padding: unset;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
     p {
       font-size: 1.6rem;
       margin-block: auto;
@@ -82,6 +95,18 @@ const GlobalStyles = createGlobalStyle`
    .sr-only{
      clip: rect(0 0 0 0);
     clip-path: inset(50%);
+  }
+  section.rmPadding{
+    padding: 0rem;
+    section.bio{
+      padding: 1rem;
+    }
+    section{
+      padding: 1rem;
+    }
+    #intro{
+      padding: 0;
+    }
   }
  `;
 

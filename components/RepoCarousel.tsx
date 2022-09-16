@@ -1,29 +1,33 @@
+import Image from "next/image";
 import { Repo } from "types/";
-import { FlexContainer } from "./Containers";
+import { FlexContainer, ImageContainer } from "./Containers";
 
 interface IRepoCarouselProps {
-  repos: Repo[];
+  images: string[];
 }
 
-export const RepoCarousel: React.FC<IRepoCarouselProps> = ({ repos }) => {
+export const RepoCarousel: React.FC<IRepoCarouselProps> = ({ images }) => {
   return (
     <FlexContainer scrollable>
-      <h2>Featured Github Repos</h2>
       <div className='row'>
-        {repos.length ? (
-          repos.map(({ node: { name, url, primaryLanguage, description } }) => (
-            <div key={name} className='card card-repo'>
-              <h3>
-                <span style={{ marginRight: "0.5rem" }}>⭐️</span>{" "}
-                <a href={url}>{name}</a>
-              </h3>
-              <p className='truncate-3'>{description}</p>
-              <div className='lang-tag'>
-                <span
-                  style={{ backgroundColor: `${primaryLanguage.color}` }}
-                ></span>{" "}
-                {primaryLanguage.name}
-              </div>
+        {images.length ? (
+          images.map((imagePath) => (
+            <div key={imagePath} className='card card-gallery'>
+              <ImageContainer
+                pBottom='none'
+                mBottom='none'
+                height='30rem'
+                rounded
+              >
+                <Image
+                  src={`/images/${imagePath}`}
+                  alt=''
+                  layout='fill'
+                  objectFit='cover'
+                  objectPosition='center center'
+                  quality={75}
+                />
+              </ImageContainer>
             </div>
           ))
         ) : (

@@ -2,9 +2,10 @@ import { getFromTheme } from "@styles/theme";
 import styled from "styled-components";
 
 export const MainWrapper = styled.main`
-  max-width: 100rem;
+  max-width: 120rem;
   background-color: ${getFromTheme("secondary")};
   margin-inline: auto;
+  padding-top: 3rem;
   p {
     margin-top: 1rem;
   }
@@ -23,21 +24,22 @@ export const FlexContainer = styled.section<FlexContainer>`
   }
 `;
 interface IGridContainerProps {
-  columns?: number;
+  columns?: number | string;
   rows?: number;
+  gap?: string;
 }
 export const GridContainer = styled.section<IGridContainerProps>`
   display: grid;
   grid-template-columns: ${({ columns }) =>
-    columns ? `repeat(${columns}, 1fr)` : "1fr"};
+    typeof columns === "number" ? `repeat(${columns}, 1fr)` : columns};
   grid-template-rows: ${({ rows }) => (rows ? `repeat(${rows}, 1fr)` : "1fr")};
   padding: 0;
-  gap: 1.6rem;
+  gap: ${({ gap }) => (gap ? `${gap}` : "1.6rem")};
 `;
 interface IImageContainerProps {
   mBottom: string;
   pBottom: string;
-  height: string;
+  height?: string;
   rounded?: boolean;
 }
 export const ImageContainer = styled.div<IImageContainerProps>`
