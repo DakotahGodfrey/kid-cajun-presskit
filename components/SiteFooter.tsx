@@ -73,7 +73,10 @@ export const SiteFooter: React.FC = () => {
             </ul>
           </div>
           <div>
-            <small>&copy; {new Date().getFullYear()} dakotah_godfrey_dev</small>
+            <small>
+              &copy; {new Date().getFullYear()}{" "}
+              <a href='https://dakotahg.dev/'>dakotah_godfrey_dev</a>
+            </small>
           </div>
         </div>
       </GridContainer>

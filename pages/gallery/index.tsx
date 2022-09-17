@@ -36,6 +36,22 @@ const GalleryCard: React.FC<IGalleryCardProps> = ({ imagePath }) => {
         quality={75}
         loading='lazy'
       />
+      {imagePath === "band-pic" && (
+        <div
+          style={{
+            zIndex: "2",
+            position: "absolute",
+            bottom: "0px",
+            right: "0px",
+            padding: "1rem",
+            background: "rgba(255,255,255,0.8)",
+            color: "#333",
+            fontStyle: "italic",
+          }}
+        >
+          rest in peace Penny Barr
+        </div>
+      )}
     </GalleryCardContainer>
   );
 };
@@ -52,10 +68,9 @@ const Gallery: NextPage = () => {
     "band-07",
     "band-08",
     "band-09",
+    "band-pic",
     "band-10",
     "paul-01",
-    "shelley-01",
-    "band-12",
     "band-13",
     "band-14",
     "band-15",
@@ -63,6 +78,7 @@ const Gallery: NextPage = () => {
     "band-18",
     "band-19",
     "ted-drum-02",
+    "shelley-01",
   ];
   const width = useViewport();
   const isMobile = width <= mq.xs;
@@ -75,7 +91,7 @@ const Gallery: NextPage = () => {
           name='description'
           content='Our music is for folks who love Cajun, zydeco, country or the blues. Check out the band in action with our gallery.'
         />
-        <meta name='keywords' content='cajun, toronto, music, liveband' />
+        <meta name='keywords' content='cajun, toronto, ron, sellwood' />
         <meta name='author' content='Dakotah Godfrey' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
